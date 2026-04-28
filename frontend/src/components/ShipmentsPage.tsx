@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Package, MapPin, Clock, AlertTriangle, TrendingUp, Search, Filter, ArrowUpDown, Eye } from 'lucide-react';
+import { Package, MapPin, Clock, AlertTriangle, TrendingUp, Search, Filter, Eye } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSocket } from '../hooks/useSocket';
 import type { Shipment } from '../types';

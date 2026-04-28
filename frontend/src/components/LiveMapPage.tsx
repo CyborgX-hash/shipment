@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useSocket } from '../hooks/useSocket';
 import MapComponent from './MapComponent';
 import type { Shipment } from '../types';
-import { MapPin, Truck, Package } from 'lucide-react';
+import { MapPin, Truck } from 'lucide-react';
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5001';
 const API_URL = `${BACKEND_URL}/api`;
@@ -32,7 +32,7 @@ const LiveMapPage = () => {
     try { const r = await axios.get(`${API_URL}/shipments`); setShipments(r.data); if (r.data.length > 0) setSelected(r.data[0]); } catch (e) { console.error(e); }
   };
 
-  const riskColor = (r: string) => r === 'High' ? 'border-red-500 bg-red-50' : r === 'Medium' ? 'border-orange-500 bg-orange-50' : 'border-green-500 bg-green-50';
+  // const riskColor removed to fix TS error
 
   return (
     <div className="space-y-4 h-full flex flex-col">

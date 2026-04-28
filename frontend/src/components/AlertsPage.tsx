@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Bell, AlertTriangle, Info, ShieldAlert, RefreshCw, Search, Filter } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSocket } from '../hooks/useSocket';
-import type { Alert, Shipment } from '../types';
+import type { Alert } from '../types';
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5001';
 const API_URL = `${BACKEND_URL}/api`;
@@ -11,7 +11,7 @@ const API_URL = `${BACKEND_URL}/api`;
 const AlertsPage = () => {
   const { socket } = useSocket();
   const [alerts, setAlerts] = useState<Alert[]>([]);
-  const [shipments, setShipments] = useState<Shipment[]>([]);
+  // shipments state removed to fix TS error
   const [filterSeverity, setFilterSeverity] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -26,7 +26,7 @@ const AlertsPage = () => {
   const fetchAll = async () => {
     try {
       const shipRes = await axios.get(`${API_URL}/shipments`);
-      setShipments(shipRes.data);
+      // setShipments(shipRes.data);
       const allAlerts: Alert[] = [];
       for (const s of shipRes.data) {
         try {

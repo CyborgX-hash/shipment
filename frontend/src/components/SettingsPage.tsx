@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Settings as SettingsIcon, Bell, Map, Truck, Shield, Moon, Sun, Globe, Database, Wifi, Save, RotateCcw } from 'lucide-react';
+import { Bell, Truck, Moon, Globe, Database, Wifi, Save, RotateCcw } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const SettingsPage = () => {
