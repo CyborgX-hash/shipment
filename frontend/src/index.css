@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-500: #3b82f6; /* blue-500 */
+  --color-primary-600: #2563eb; /* blue-600 */
+  --color-secondary-500: #a855f7; /* purple-500 */
+  --color-secondary-600: #9333ea; /* purple-600 */
+}
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl rounded-2xl;
+  }
+  .glass-dark {
+    @apply bg-gray-900/70 backdrop-blur-lg border border-gray-700/50 shadow-xl rounded-2xl;
+  }
+}
